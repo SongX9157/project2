@@ -1,11 +1,15 @@
 import React from 'react';
 
-export function Swatch(){
+export function Swatch(props){
+    const swatch = props.swatch;
     return(
         <div className="swatch">
-            <span className="hex">#000000</span>
-            <span className="delete-button">&#x2716;</span>
-            <span className="name">name</span>
+            <div className="date">
+                <span className="hex">{swatch.month}{swatch.day}</span>
+            </div>
+            <div className="message">
+                {swatch.message}
+            </div>
             <button>ADD</button>
         </div>
     );
