@@ -10,7 +10,6 @@ export function Tag(props){
             <div className="message">
                 {tag.message}
             </div>
-            <button>ADD</button>
         </div>
     );
 }

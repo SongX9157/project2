@@ -1,18 +1,39 @@
 .Tag{
   width: 25%;
-  height: 100px;
   background-color:gainsboro;
   position: relative;
   border: 1em black;
   margin: 1px;
+  padding: 10px;
+}
+
+#root{
+  margin-left:5% ;
+  margin-right: 5%;
+  text-align: center;
 }
 
 .Comment1{
-  width: 100%;
   background-color:gainsboro;
   position: relative;
   border: 1em black;
   margin: 1px;
+  margin-bottom: 15px;
+  padding: 2%;
+}
+
+p{
+  font-size: 1.2em;
+  margin: 0;
+}
+
+iframe{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.message{
+  font-size: 2em;
 }
 
 .Header{
@@ -29,10 +50,18 @@
   color: rgb(238, 236, 236);
 }
 
+#form > h1{
+  font-size: 2em;
+}
+
+#form >input{
+  font-size: 3em;
+  width: 30%;
+}
+
 #comment{
   display: flex;
   flex-direction: column;
-  width: 50%;
   flex-wrap:wrap ;
   padding: 5%;
   padding-top: 0;
@@ -40,11 +69,28 @@
 
 #tag{
   display: flex;
-  justify-content: center;
-  width: 50%;
+  justify-content: left;
+  width: 100%;
   flex-wrap:wrap ;
   padding: 5%;
   padding-top:0 ;
+}
+
+#right, #left{
+  width: 50%;
+}
+
+#left{
+  background-color: #2d3d4de5;
+}
+
+#right{
+  background-color: #23313fe5;
+}
+
+h1{
+  text-align: center;
+  color: white;
 }
 
 #frame{
@@ -53,13 +99,21 @@
 
 }
 
+textarea{
+  height: 200px;
+  width: 60%;
+  font-size: 4em;
+}
+
 #sample{
   width: 100%;
-  text-align: center;
   background-color: #445261;
-  display: flex;
-  justify-content: center;
   padding-bottom: 2%;
+}
+
+.inner{
+  text-align: center;
+  width: 100%;
 }
 
 #options {
@@ -67,12 +121,14 @@
   font-size: 5em;
   background-color: rgb(19, 23, 53);
   color: rgb(255, 255, 255);
+  padding: 5px;
 }
 
-#button1{
-  font: 3em sans-serif;
+.button1{
+  font: 2em sans-serif;
   padding: 10px;
-  padding-left: 5%;
-  padding-right: 5%;
+  width: 150px;
+  text-align: center;
+  margin: 10px;
 }
 

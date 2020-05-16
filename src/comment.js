@@ -5,12 +5,11 @@ export function Comment(props){
     return(
         <div className="Comment1">
             <div className="date">
-                <span className="hex">{comment.month}{comment.day}</span>
+                <p>{comment.year},{comment.month}</p>
             </div>
             <div className="message">
                 {comment.message}
             </div>
-            <button>ADD</button>
         </div>
     );
 }
