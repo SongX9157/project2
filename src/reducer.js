@@ -12,6 +12,12 @@ function reducer(state = initialState, action){
                 datas: action.payload,
 
             }
+        case Action.finishiAddingMessage:
+            return{
+                ...state,
+                datas: [action.payload, ...state.datas],
+
+            }
         default:
             return state;
     }

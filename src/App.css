@@ -30,6 +30,16 @@ p{
 iframe{
   margin-top: 20px;
   text-align: center;
+  border:0;
+}
+
+#timer{
+  font-size: 3em;
+}
+
+#countdown{
+  padding: 2%;
+  background-color: royalblue;
 }
 
 .message{
@@ -51,7 +61,7 @@ iframe{
 }
 
 #form > h1{
-  font-size: 2em;
+  font-size: 3em;
 }
 
 #form >input{

@@ -12,6 +12,8 @@ function App() {
   const datas = useSelector(state => state.datas);
   const dispatch = useDispatch();
 
+ 
+
   useEffect(() =>{
     dispatch(loadMessage('xenoblade'));
   },[dispatch]);
@@ -27,14 +29,12 @@ function App() {
        <div id="left">
          <h1>Tags</h1>
         <div id="tag">
-          {datas.map(tag => <Tag key={tag.id} tag={tag}/>)}
+        {datas.map(tag => <Tag key={tag.id} tag={tag}/>)}
         </div>
        </div>
        <div id="right">
          <h1>Comments</h1>
         <div id="comment">
-          {datas.map(comment=><Comment key={comment.id} comment={comment}/>)}
-          
           {datas.map(comment=><Comment key={comment.id} comment={comment}/>)}
         </div>
         </div>

@@ -1,24 +1,54 @@
 import React from 'react';
 
+import {useDispatch} from 'react-redux';
+import {startAddingMessage} from './action.js';
+
+
+
+
 export function Sample(){
+    const dispatch = useDispatch();
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth();
+
+    const onAdd = () =>{
+        var message = document.getElementById('ta').value;
+        dispatch(startAddingMessage(year, month, message));
+        alert('Submitted, thank you!');
+    }
+
+    window.onload = function(){
+        this.setInterval(function(){
+            var start = new Date();
+            var end = new Date("2020-5-29 09:00:00");
+            var seconds = parseInt((end.getTime() - start.getTime()) / 1000);
+            var day = parseInt(seconds / 3600 / 24);
+            var hour = parseInt(seconds / 3600 % 24);
+            var minute = parseInt(seconds / 60 % 60);
+            var second = parseInt(seconds % 60);
+            document.getElementById("timer").innerHTML =  day +" D " + hour + " H " + minute + " M " + second;
+        }, 1000);
+    }
+
     return(
         <div className="inner">
-            <iframe width="1080" height="720" src="https://www.youtube.com/embed/tVfMySwUibQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div id="countdown">
+                <h1 id="timer"> </h1>
+                <h1>to release day</h1>
+            </div>
+            <iframe width="1080" title="game" height="720" src="https://www.youtube.com/embed/tVfMySwUibQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
 
             <select id="options">
                 <option>Tags</option>
                 <option>Comments</option>
             </select>
             <form id="form">
-                  <h1>month</h1>
-                  <input type="text"></input>
-                  <h1>day</h1>
-                  <input type="text"></input>
-                  <h1>subject</h1>
+                  <h1>Subject</h1>
                   <textarea id="ta" placeholder="leave your message here..."></textarea>
-                  <div class="btn">
-                  <button class="button1" onclick="alert('Submitted, thank you!');">submit</button>
-                  <button class="button1" type="button" onclick="document.getElementById('ta').value='';">clear</button>
+                  <div className="btn">
+                  <button className="button1" onClick={onAdd}>submit</button>
+                  <button className="button1">clear</button>
                   </div>
             </form>
         </div>
