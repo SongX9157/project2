@@ -1,14 +1,14 @@
 import React from 'react';
 
-export function Swatch(props){
-    const swatch = props.swatch;
+export function Tag(props){
+    const tag = props.tag;
     return(
-        <div className="swatch">
+        <div className="Tag">
             <div className="date">
-                <span className="hex">{swatch.month}{swatch.day}</span>
+                <span className="hex">{tag.month}{tag.day}</span>
             </div>
             <div className="message">
-                {swatch.message}
+                {tag.message}
             </div>
             <button>ADD</button>
         </div>

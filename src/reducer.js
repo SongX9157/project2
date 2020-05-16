@@ -1,12 +1,20 @@
+import {Action} from './action';
+
 const initialState = {
     isWaiting: false,
-    datas : [
-        {id:1, month: 1, day: 20,message: "Good game." },
-        {id:1, month: 3, day: 12,message: "Not good for the new player." },
-      ],
+    datas : [],
 };
 function reducer(state = initialState, action){
-    return state;
+    switch(action.type){
+        case Action.LoadMemories:
+            return{
+                ...state,
+                datas: action.payload,
+
+            }
+        default:
+            return state;
+    }
 }
 
 export default reducer;
