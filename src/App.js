@@ -5,17 +5,19 @@ import {Header} from './header.js';
 import {Sample} from './sample.js';
 import {useSelector, useDispatch} from 'react-redux';
 import {loadMessage} from './action.js';
+import {loadTag} from './action.js';
 import{Comment} from './comment.js';
 
 
 function App() {
   const datas = useSelector(state => state.datas);
+  const tags = useSelector(state => state.tags);
   const dispatch = useDispatch();
 
  
-
   useEffect(() =>{
     dispatch(loadMessage('xenoblade'));
+    dispatch(loadTag());
   },[dispatch]);
   return ( 
    <div id="root">
@@ -29,7 +31,7 @@ function App() {
        <div id="left">
          <h1>Tags</h1>
         <div id="tag">
-        {datas.map(tag => <Tag key={tag.id} tag={tag}/>)}
+        {tags.map(tag => <Tag key={tag.id} tag={tag}/>)}
         </div>
        </div>
        <div id="right">

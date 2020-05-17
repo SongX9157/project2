@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {useDispatch} from 'react-redux';
-import {startAddingMessage} from './action.js';
+import {startAddingMessage, startAddingTag} from './action.js';
 
 
 
@@ -10,13 +10,25 @@ export function Sample(){
     const dispatch = useDispatch();
     const date = new Date();
     const year = date.getFullYear();
-    const month = date.getMonth();
+    const month = date.getMonth()+1;
+    const day = date.getDate();
 
     const onAdd = () =>{
         var message = document.getElementById('ta').value;
-        dispatch(startAddingMessage(year, month, message));
+        var option = document.getElementById('options').value;
+        if(option==="Comment")
+        {
+            dispatch(startAddingMessage(year, month, day, message));
+        }
+        else dispatch(startAddingTag(message));
         alert('Submitted, thank you!');
     }
+
+    const clear = () =>{
+        document.getElementById('ta').reset();
+    }
+
+
 
     window.onload = function(){
         this.setInterval(function(){
@@ -37,7 +49,7 @@ export function Sample(){
                 <h1 id="timer"> </h1>
                 <h1>to release day</h1>
             </div>
-            <iframe width="1080" title="game" height="720" src="https://www.youtube.com/embed/tVfMySwUibQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
+            <iframe  title="game" src="https://www.youtube.com/embed/tVfMySwUibQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
 
             <select id="options">
                 <option>Tags</option>
@@ -48,7 +60,7 @@ export function Sample(){
                   <textarea id="ta" placeholder="leave your message here..."></textarea>
                   <div className="btn">
                   <button className="button1" onClick={onAdd}>submit</button>
-                  <button className="button1">clear</button>
+                  <button className="button1" onClick={clear}>clear</button>
                   </div>
             </form>
         </div>
