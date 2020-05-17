@@ -5,7 +5,7 @@ export function Comment(props){
     return(
         <div className="Comment1">
             <div className="date">
-                <p>{comment.year},{comment.month}</p>
+    <p>{comment.year}/{comment.month}/{comment.month}</p>
             </div>
             <div className="message">
                 {comment.message}

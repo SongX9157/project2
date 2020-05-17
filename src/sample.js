@@ -16,7 +16,7 @@ export function Sample(){
     const onAdd = () =>{
         var message = document.getElementById('ta').value;
         var option = document.getElementById('options').value;
-        if(option==="Comment")
+        if(option==="Comments")
         {
             dispatch(startAddingMessage(year, month, day, message));
         }
